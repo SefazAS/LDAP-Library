@@ -206,7 +206,7 @@ namespace GUI_LDAPUnitTest.Tests.BusinessLogic.TestImplementation
             if (!_ldapManagerObj.CreateUser(_userRepository.TestUser))
                 return false;
 
-            List<ILdapUser> returnUsers;
+            IList<ILdapUser> returnUsers;
 
             try
             {
@@ -420,7 +420,7 @@ namespace GUI_LDAPUnitTest.Tests.BusinessLogic.TestImplementation
             if (!TestAdminConnect())
                 return false;
 
-            List<ILdapUser> returnUsers;
+            IList<ILdapUser> returnUsers;
 
             bool result = _ldapManagerObj.SearchUsers(null, _userRepository.GetUserToSearch(), out returnUsers);
 

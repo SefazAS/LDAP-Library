@@ -8,18 +8,19 @@
 <h1>Summary</h1>
 <table class="overview">
 <colgroup>
-<col style="width: 135px;" />
+<col class="column135" />
 <col />
 </colgroup>
 <tbody>
 <tr><th>Class:</th><td>LDAPLibrary.Logger.FileLogger</td></tr>
 <tr><th>Assembly:</th><td>LDAPLibrary</td></tr>
 <tr><th>File(s):</th><td><a href="#cworkLDAPLibraryLDAPLibraryLoggerFileLoggercs">c:\work\LDAP-Library\LDAPLibrary\Logger\FileLogger.cs</a></td></tr>
-<tr><th>Coverage:</th><td>61.5%</td></tr>
 <tr><th>Covered lines:</th><td>8</td></tr>
 <tr><th>Uncovered lines:</th><td>5</td></tr>
 <tr><th>Coverable lines:</th><td>13</td></tr>
 <tr><th>Total lines:</th><td>28</td></tr>
+<tr><th>Line coverage:</th><td>61.5%</td></tr>
+<tr><th>Branch coverage:</th><td>100%</td></tr>
 </tbody>
 </table>
 <h1>Metrics</h1>
@@ -33,7 +34,7 @@
 <h1>File(s)</h1>
 <h2 id="cworkLDAPLibraryLDAPLibraryLoggerFileLoggercs">c:\work\LDAP-Library\LDAPLibrary\Logger\FileLogger.cs</h2>
 <table class="lineAnalysis">
-<thead><tr><th></th><th>#</th><th>Line</th><th></th><th>Coverage</th></tr></thead>
+<thead><tr><th></th><th>#</th><th>Line</th><th></th><th>Line coverage</th></tr></thead>
 <tbody>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>1</code></td><td></td><td class="lightgray"><code>using&nbsp;System;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>2</code></td><td></td><td class="lightgray"><code>using&nbsp;System.IO;</code></td></tr>
@@ -45,17 +46,17 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>8</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;const&nbsp;string&nbsp;LogFileName&nbsp;=&nbsp;&quot;LDAPLog.txt&quot;;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>9</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;readonly&nbsp;string&nbsp;_logPath;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>10</code></td><td></td><td class="lightgray"><code></code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '45', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">45</td><td class="rightmargin right"><code>11</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FileLogger(string&nbsp;logPath)</code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '45', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">45</td><td class="rightmargin right"><code>12</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
-<tr title="2 of 2 branches are covered" data-coverage="{'AllTestMethods': {'VC': '45', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">45</td><td class="rightmargin right"><code>13</code></td><td class="branch coverage100">&nbsp;</td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(Directory.Exists(logPath))</code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '42', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">42</td><td class="rightmargin right"><code>14</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_logPath&nbsp;=&nbsp;logPath;</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '47', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">47</td><td class="rightmargin right"><code>11</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FileLogger(string&nbsp;logPath)</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '47', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">47</td><td class="rightmargin right"><code>12</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
+<tr title="2 of 2 branches are covered" data-coverage="{'AllTestMethods': {'VC': '47', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">47</td><td class="rightmargin right"><code>13</code></td><td class="branch100">&nbsp;</td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(Directory.Exists(logPath))</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '44', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">44</td><td class="rightmargin right"><code>14</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_logPath&nbsp;=&nbsp;logPath;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>15</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '3', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">3</td><td class="rightmargin right"><code>16</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;ArgumentException(&quot;The&nbsp;path&nbsp;for&nbsp;the&nbsp;log&nbsp;is&nbsp;not&nbsp;a&nbsp;directory&quot;);</code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '42', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">42</td><td class="rightmargin right"><code>17</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '44', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">44</td><td class="rightmargin right"><code>17</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>18</code></td><td></td><td class="lightgray"><code></code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>19</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;override&nbsp;void&nbsp;Write(string&nbsp;message)</code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '25', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">25</td><td class="rightmargin right"><code>20</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '25', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">25</td><td class="rightmargin right"><code>21</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;using&nbsp;(var&nbsp;logWriter&nbsp;=&nbsp;new&nbsp;StreamWriter(_logPath&nbsp;+&nbsp;@&quot;\&quot;&nbsp;+&nbsp;LogFileName,&nbsp;true))</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '27', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">27</td><td class="rightmargin right"><code>20</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '27', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">27</td><td class="rightmargin right"><code>21</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;using&nbsp;(var&nbsp;logWriter&nbsp;=&nbsp;new&nbsp;StreamWriter(_logPath&nbsp;+&nbsp;@&quot;\&quot;&nbsp;+&nbsp;LogFileName,&nbsp;true))</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><code>22</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><code>23</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logWriter.WriteLine(message);</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><code>24</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logWriter.Close();</code></td></tr>
@@ -65,6 +66,6 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>28</code></td><td></td><td class="lightgray"><code>}</code></td></tr>
 </tbody>
 </table>
-<div class="footer">Generated by: ReportGenerator 2.0.2.0<br />12/3/2015 - 2.38.26 PM<br /><a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
+<div class="footer">Generated by: ReportGenerator 2.4.3.0<br />2/19/2016 - 11.45.08 AM<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
 <script type="text/javascript" src="combined.js"></script>
 </body></html>

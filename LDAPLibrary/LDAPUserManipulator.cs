@@ -123,49 +123,7 @@ namespace LDAPLibrary
                 LdapState.LdapUserManipulatorSuccess));
             return LdapState.LdapUserManipulatorSuccess;
         }
-
-        /// <summary>
-        ///     Search Users in the LDAP system
-        /// </summary>
-        /// <param name="otherReturnedAttributes">Addictional attributes added to the results LDAPUsers objects</param>
-        /// <param name="searchedUsers">Credential for the search</param>
-        /// <param name="searchResult">LDAPUsers object returned in the search</param>
-        /// <returns>Boolean that comunicate the result of search</returns>
-        public LdapState SearchUsers(List<string> otherReturnedAttributes, string[] searchedUsers,
-            out List<ILdapUser> searchResult)
-        {
-            searchResult = new List<ILdapUser>();
-            try
-            {
-                otherReturnedAttributes =
-                    (new List<string> {"cn", "sn"}).Union((otherReturnedAttributes ?? new List<string>())).ToList();
-                //Foreach all the credential,for everyone do the search and add user results to the out parameter
-                searchResult = searchedUsers.Select(
-                    users =>
-                        (SearchResponse) _ldapConnection.SendRequest(
-                            LdapRequestBuilder.GetSearchUserRequest(_configRepository.GetSearchBaseDn(),
-                                LdapFilterBuilder.GetSearchFilter(_configRepository.GetUserObjectClass(),
-                                    _configRepository.GetMatchFieldName(), users), otherReturnedAttributes)
-                            ))
-                    .Aggregate(searchResult,
-                        (current, searchReturn) =>
-                            current.Concat(LdapUserUtils.ConvertToLdapUsers(searchReturn)).ToList());
-            }
-            catch (Exception e)
-            {
-                _logger.Write(_logger.BuildLogMessage(e.Message, LdapState.LdapSearchUserError));
-                return LdapState.LdapSearchUserError;
-            }
-
-            if (searchResult.Count == 0)
-            {
-                _logger.Write(_logger.BuildLogMessage("Search Operation with NO RESULTS", LdapState.LdapSearchUserError));
-                return LdapState.LdapSearchUserError;
-            }
-            _logger.Write(_logger.BuildLogMessage("Search Operation Success", LdapState.LdapUserManipulatorSuccess));
-            return LdapState.LdapUserManipulatorSuccess;
-        }
-
+        
         public void Dispose()
         {
             _configRepository = null;

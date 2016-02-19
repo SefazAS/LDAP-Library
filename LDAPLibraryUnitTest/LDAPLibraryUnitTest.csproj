@@ -61,6 +61,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Factories\LdapSearcherFactoryUnitTest.cs" />
     <Compile Include="LdapModeCheckerUnitTests.cs" />
     <Compile Include="localhost\LocalhostEnvironmentAnonymous.cs" />
     <Compile Include="localhost\LocalhostEnvironment.cs" />
@@ -75,10 +76,10 @@
     <Compile Include="LdapStateUtilsUnitTests.cs" />
     <Compile Include="RequestBuinderUnitTests.cs" />
     <Compile Include="FilterBuilderUnitTests.cs" />
-    <Compile Include="LoggerFactoryUnitTests.cs" />
-    <Compile Include="LdapUserManipulatorFactoryUnitTests.cs" />
-    <Compile Include="LdapConnectionFactoryUnitTests.cs" />
-    <Compile Include="LdapConfigRepositoryFactoryUnitTests.cs" />
+    <Compile Include="Factories\LoggerFactoryUnitTests.cs" />
+    <Compile Include="Factories\LdapUserManipulatorFactoryUnitTests.cs" />
+    <Compile Include="Factories\LdapConnectionFactoryUnitTests.cs" />
+    <Compile Include="Factories\LdapConfigRepositoryFactoryUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LDAPLibrary\LDAPLibrary.csproj">

@@ -127,7 +127,7 @@ namespace LDAP_Library_UnitTest.localhost
                 "description"
             };
 
-            List<ILdapUser> returnUsers;
+            IList<ILdapUser> returnUsers;
 
             bool result = _ldapManagerObj.SearchUsers(userAttributeToReturnBySearch, fakeuserIdToSearch, out returnUsers);
 

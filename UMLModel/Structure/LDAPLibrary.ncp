@@ -8,13 +8,15 @@
         <Name>ILdapManager</Name>
         <Access>Public</Access>
         <Location left="588" top="78" />
-        <Size width="691" height="214" />
+        <Size width="691" height="248" />
         <Collapsed>False</Collapsed>
         <Member type="Method">bool CreateUser(ILdapUser newUser)</Member>
         <Member type="Method">bool DeleteUser(ILdapUser user)</Member>
         <Member type="Method">bool ModifyUserAttribute(DirectoryAttributeOperation operationType, ILdapUser user, string attributeName, string attributeValue)</Member>
         <Member type="Method">bool ChangeUserPassword(ILdapUser user, string newPwd)</Member>
         <Member type="Method">bool SearchUsers(List&lt;string&gt; otherReturnedAttributes, string[] searchedUsers, out List&lt;ILdapUser&gt; searchResult)</Member>
+        <Member type="Method">bool SearchUsers(List&lt;string&gt; otherReturnedAttributes, out List&lt;ILdapUser&gt; searchResult)</Member>
+        <Member type="Method">bool SearchAllNodes(List&lt;string&gt; otherReturnedAttributes, out List&lt;ILdapUser&gt; searchResult)</Member>
         <Member type="Method">string GetLdapMessage()</Member>
         <Member type="Method">bool Connect()</Member>
         <Member type="Method">bool Connect(NetworkCredential credential)</Member>
@@ -24,7 +26,7 @@
         <Name>LdapManager</Name>
         <Access>Public</Access>
         <Location left="737" top="407" />
-        <Size width="345" height="213" />
+        <Size width="345" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">ILdapConfigRepository _configRepository</Member>
         <Member type="Field">readonly ILdapConnector _connector</Member>
@@ -32,6 +34,7 @@
         <Member type="Field">readonly ILdapUserManipulator _manageLdapUser</Member>
         <Member type="Field">ILdapAdminModeChecker _adminModeChecker</Member>
         <Member type="Field">LdapState _ldapCurrentState</Member>
+        <Member type="Field">private ILdapSearcher _searcher</Member>
         <Member type="Constructor">public LdapManager(ILdapUser adminUser, LDAPAdminMode adminMode, string ldapServer, string ldapSearchBaseDn, AuthType authType, LoggerType loggerType, string logPath)</Member>
         <Member type="Constructor">public LdapManager(ILdapUser adminUser, LDAPAdminMode adminMode, string ldapServer, string ldapSearchBaseDn, AuthType authType, bool secureSocketLayerFlag, bool transportSocketLayerFlag, bool clientCertificateFlag, string clientCertificatePath, LoggerType loggerType, string logPath, string userObjectClass, string matchFieldUsername)</Member>
         <Modifier>None</Modifier>
@@ -72,7 +75,7 @@
         <Location left="1883" top="454" />
         <Size width="162" height="383" />
         <Collapsed>True</Collapsed>
-        <Member type="Field">const string BasicConfigNullParametersErrorMessage = Server or SearchBaseDn parameter cannot be null or empty and the file log path cannot be null if the logType is 'File' </Member>
+        <Member type="Field">const string BasicConfigNullParametersErrorMessage = Server or SearchBaseDn parameter cannot be null or empty and the file log path cannot be null if the logType is 'File'</Member>
         <Member type="Field">const string CompleteConfigNullParametersErrorMessage = One param are null or empty:Admin User: {0},clientCertificatePath: {1}, userObjectClass: {2},matchFieldUsername: {3}</Member>
         <Member type="Field">LDAPAdminMode _adminMode</Member>
         <Member type="Field">ILdapUser _adminUser</Member>
@@ -105,7 +108,7 @@
         <Name>ILdapConnectionObservable</Name>
         <Access>Internal</Access>
         <Location left="1813" top="78" />
-        <Size width="162" height="216" />
+        <Size width="282" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">void LdapConnectionSubscribe(ILdapConnectionObserver observer)</Member>
         <Member type="Method">void LdapConnectionUnsubscribe(ILdapConnectionObserver observer)</Member>
@@ -211,7 +214,6 @@
         <Member type="Method">LdapState DeleteUser(ILdapUser user)</Member>
         <Member type="Method">LdapState ModifyUserAttribute(DirectoryAttributeOperation operationType, ILdapUser user, string attributeName, string attributeValue)</Member>
         <Member type="Method">LdapState ChangeUserPassword(ILdapUser user, string newPwd)</Member>
-        <Member type="Method">LdapState SearchUsers(List&lt;string&gt; otherReturnedAttributes, string[] searchedUsers, out List&lt;ILdapUser&gt; searchResult)</Member>
       </Entity>
       <Entity type="Interface">
         <Name>ILdapConnectionObserver</Name>
@@ -409,11 +411,15 @@
       <Entity type="Class">
         <Name>LdapFilterBuilder</Name>
         <Access>Internal</Access>
-        <Location left="1725" top="1305" />
-        <Size width="162" height="216" />
+        <Location left="1564" top="1308" />
+        <Size width="348" height="224" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private const string SearchFilterTemplate = "(&amp;(objectClass={0})({1}={2}))"</Member>
+        <Member type="Field">private const string SearchFilterTemplateObjectClassAndFieldMatch = "(&amp;(objectClass={0})({1}={2}))"</Member>
+        <Member type="Field">private const int SearchFilterTemplateObjectClassMatch = "(objectClass={0})"</Member>
+        <Member type="Field">private const string SearchFilterTemplateAllMatch = "(objectClass=*)"</Member>
         <Member type="Method">public static string GetSearchFilter(string objectClass, string fieldUsername, string user)</Member>
+        <Member type="Method">public static string GetSearchFilter(string objectClass)</Member>
+        <Member type="Method">public static string GetSearchFilter()</Member>
         <Modifier>Static</Modifier>
       </Entity>
       <Entity type="Class">
@@ -429,13 +435,13 @@
         <Name>LdapRequestBuilder</Name>
         <Access>Internal</Access>
         <Location left="2153" top="1313" />
-        <Size width="162" height="216" />
+        <Size width="785" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public static AddRequest GetAddRequest(ILdapUser user, string objectClass)</Member>
         <Member type="Method">public static DeleteRequest GetDeleteRequest(ILdapUser user)</Member>
         <Member type="Method">public static ModifyRequest GetModifyRequest(ILdapUser user, DirectoryAttributeOperation attributeOperation, string attributeName, string attributeValue)</Member>
         <Member type="Method">public static ModifyRequest GetModifyPasswordRequest(ILdapUser user, string newPassword)</Member>
-        <Member type="Method">public static SearchRequest GetSearchUserRequest(string baseDn, string searchFilter, List&lt;string&gt; searchAttributes)</Member>
+        <Member type="Method">public static SearchRequest GetSearchUserRequest(string baseDn, string searchFilter, IEnumerable&lt;string&gt; searchAttributes)</Member>
         <Modifier>Static</Modifier>
       </Entity>
       <Entity type="Class">
@@ -459,11 +465,49 @@
         <Member type="Method">private static ILdapUser ConvertToLdapUser(SearchResultEntry searchResultEntry)</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Interface">
+        <Name>ILdapSearcher</Name>
+        <Access>Public</Access>
+        <Location left="325" top="184" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">LdapState SearchUsers(List&lt;string&gt; otherReturnedAttributes, string[] searchedUsers, out List&lt;ILdapUser&gt; searchResult)</Member>
+        <Member type="Method">LdapState SearchUsers(List&lt;string&gt; otherReturnedAttributes, out List&lt;ILdapUser&gt; searchResult)</Member>
+        <Member type="Method">LdapState SearchAllNodes(List&lt;string&gt; otherReturnedAttributes, out List&lt;ILdapUser&gt; searchResult)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>LdapSearcher</Name>
+        <Access>Public</Access>
+        <Location left="446" top="751" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly IEnumerable&lt;string&gt; _baseAttributes</Member>
+        <Member type="Field">private LdapConnection _ldapConnection</Member>
+        <Member type="Field">private ILdapConfigRepository _configRepository</Member>
+        <Member type="Method">private LdapState BaseLdapSearch(IEnumerable&lt;string&gt; otherReturnedAttributes, out List&lt;ILdapUser&gt; searchResult, string searchFilter)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LdapUserManipulatorFactory</Name>
+        <Access>Public</Access>
+        <Location left="4221" top="537" />
+        <Size width="301" height="100" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static ILdapUserManipulator GetUserManipulator(ILdapConnectionObservable connector, ILogger logger, ILdapConfigRepository configRepository)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LdapSearcherFactory</Name>
+        <Access>Public</Access>
+        <Location left="2762" top="651" />
+        <Size width="301" height="100" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static ILdapSearcher GetSearcher(ILdapConnectionObservable connector, ILogger logger, ILdapConfigRepository configRepository)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Dependency" first="0" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -472,14 +516,10 @@
         </BendPoint>
       </Relationship>
       <Relationship type="Dependency" first="5" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
       <Relationship type="Dependency" first="5" second="6">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
@@ -496,8 +536,6 @@
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
       <Relationship type="Association" first="1" second="5">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -512,21 +550,17 @@
         <AssociationType>Composition</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="11">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>1053</X>
-          <Y>649</Y>
+          <Y>666</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
@@ -568,8 +602,6 @@
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
       <Relationship type="Dependency" first="17" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -582,8 +614,6 @@
         </BendPoint>
       </Relationship>
       <Relationship type="Dependency" first="16" second="17">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
@@ -592,8 +622,6 @@
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
       <Relationship type="Association" first="18" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -608,8 +636,6 @@
         <AssociationType>Composition</AssociationType>
       </Relationship>
       <Relationship type="Association" first="18" second="11">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -620,8 +646,6 @@
         <AssociationType>Composition</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="16">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -636,16 +660,12 @@
         </BendPoint>
       </Relationship>
       <Relationship type="Association" first="1" second="19">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Composition</AssociationType>
       </Relationship>
       <Relationship type="Association" first="24" second="11">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -658,6 +678,32 @@
       <Relationship type="Realization" first="32" second="30">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="43" second="42">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>526</X>
+          <Y>650</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="1" second="43">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="42" second="17">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>451</X>
+          <Y>159</Y>
+        </BendPoint>
       </Relationship>
     </Relationships>
   </ProjectItem>

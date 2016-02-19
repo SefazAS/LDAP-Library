@@ -20,14 +20,14 @@
       <w>144</w>
       <h>27</h>
     </coordinates>
-    <panel_attributes>_LdapUserManipulator_</panel_attributes>
+    <panel_attributes>_LdapSearcher_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>351</x>
-      <y>63</y>
+      <x>1071</x>
+      <y>567</y>
       <w>27</w>
       <h>72</h>
     </coordinates>
@@ -450,7 +450,7 @@ bg=blue</panel_attributes>
       <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-SearchUsers</panel_attributes>
+SearchUsersAndConnect</panel_attributes>
     <additional_attributes>310.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
@@ -496,7 +496,7 @@ SearchResults</panel_attributes>
       <w>144</w>
       <h>27</h>
     </coordinates>
-    <panel_attributes>_LdapUserManipulator_</panel_attributes>
+    <panel_attributes>_LdapSearcher_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -524,5 +524,120 @@ SearchResults</panel_attributes>
                            Connect(new NetworkCredential(searchedUser.GetUserDn(), password)))
                        .Any(connectResult =&gt; connectResult);</panel_attributes>
     <additional_attributes>10.0;50.0;70.0;50.0;70.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>135</x>
+      <y>540</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Search users with fieldname (username,uid...)
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>738</x>
+      <y>540</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>_LdapManager_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>765</x>
+      <y>621</y>
+      <w>27</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>774</x>
+      <y>558</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>783</x>
+      <y>603</y>
+      <w>297</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+SearchUsers
+SearchAllNodes</panel_attributes>
+    <additional_attributes>310.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>774</x>
+      <y>765</y>
+      <w>27</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>783</x>
+      <y>684</y>
+      <w>297</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+LdapState.LdapUserManipulatorSuccess
+SearchResults</panel_attributes>
+    <additional_attributes>10.0;20.0;310.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1062</x>
+      <y>621</y>
+      <w>18</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1008</x>
+      <y>549</y>
+      <w>144</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>_LdapSearcher_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1062</x>
+      <y>567</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
 </diagram>

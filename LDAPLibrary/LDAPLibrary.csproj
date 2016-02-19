@@ -66,6 +66,7 @@
     <Compile Include="Factories\LdapConfigRepositoryFactory.cs" />
     <Compile Include="Factories\LdapConnectionFactory.cs" />
     <Compile Include="Factories\LdapConnectorFactory.cs" />
+    <Compile Include="Factories\LdapSearcherFactory.cs" />
     <Compile Include="Factories\LdapUserManipulatorFactory.cs" />
     <Compile Include="Factories\LoggerFactory.cs" />
     <Compile Include="FakeLdapUser.cs" />
@@ -75,12 +76,14 @@
     <Compile Include="Interfarces\ILdapConnector.cs" />
     <Compile Include="Interfarces\ILdapManager.cs" />
     <Compile Include="Interfarces\ILdapAdminModeChecker.cs" />
+    <Compile Include="Interfarces\ILdapSearcher.cs" />
     <Compile Include="Interfarces\ILdapUser.cs" />
     <Compile Include="Interfarces\ILdapUserManipulator.cs" />
     <Compile Include="Interfarces\ILogger.cs" />
     <Compile Include="LdapConfigRepository.cs" />
     <Compile Include="LdapAdminModeChecker.cs" />
     <Compile Include="LdapManager.cs" />
+    <Compile Include="LdapSearcher.cs" />
     <Compile Include="LdapUser.cs" />
     <Compile Include="LdapUserManipulator.cs" />
     <Compile Include="Logger\ALogger.cs" />

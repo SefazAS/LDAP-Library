@@ -18,7 +18,7 @@ namespace LDAP_Library_UnitTest
             ILdapUserManipulator ldapUserManipulator = LdapUserManipulatorFactory.GetUserManipulator(ldapConnector,
                 logger, configRepo);
 
-            Assert.IsInstanceOfType(ldapUserManipulator, typeof (LdapUserManipulator));
+            Assert.IsInstanceOfType(ldapUserManipulator, typeof (ILdapUserManipulator));
         }
     }
 }

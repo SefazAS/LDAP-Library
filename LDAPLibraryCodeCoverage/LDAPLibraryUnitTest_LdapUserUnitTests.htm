@@ -8,18 +8,18 @@
 <h1>Summary</h1>
 <table class="overview">
 <colgroup>
-<col style="width: 135px;" />
+<col class="column135" />
 <col />
 </colgroup>
 <tbody>
 <tr><th>Class:</th><td>LDAP_Library_UnitTest.LdapUserUnitTests</td></tr>
 <tr><th>Assembly:</th><td>LDAPLibraryUnitTest</td></tr>
 <tr><th>File(s):</th><td><a href="#cworkLDAPLibraryLDAPLibraryUnitTestLdapUserUnitTestscs">c:\work\LDAP-Library\LDAPLibraryUnitTest\LdapUserUnitTests.cs</a></td></tr>
-<tr><th>Coverage:</th><td>94.3%</td></tr>
 <tr><th>Covered lines:</th><td>184</td></tr>
 <tr><th>Uncovered lines:</th><td>11</td></tr>
 <tr><th>Coverable lines:</th><td>195</td></tr>
 <tr><th>Total lines:</th><td>381</td></tr>
+<tr><th>Line coverage:</th><td>94.3%</td></tr>
 </tbody>
 </table>
 <h1>Metrics</h1>
@@ -51,10 +51,10 @@
 <tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::DeleteUserAttribute()">DeleteUserAttribute()</td><td>1</td><td>100</td><td>100</td></tr>
 <tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::DeleteUserAttributeNotExist()">DeleteUserAttributeNotExist()</td><td>1</td><td>66.67</td><td>100</td></tr>
 <tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::DeleteUserAttributeValueNotExist()">DeleteUserAttributeValueNotExist()</td><td>1</td><td>66.67</td><td>100</td></tr>
-<tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::GetUserOperationAdd()">GetUserOperationAdd()</td><td>3</td><td>100</td><td>60</td></tr>
+<tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::GetUserOperationAdd()">GetUserOperationAdd()</td><td>3</td><td>100</td><td>100</td></tr>
 <tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::ResetTestUser()">ResetTestUser()</td><td>1</td><td>100</td><td>100</td></tr>
-<tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::GetUserOperationDelete()">GetUserOperationDelete()</td><td>3</td><td>100</td><td>60</td></tr>
-<tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::GetUserOperationReplace()">GetUserOperationReplace()</td><td>4</td><td>100</td><td>57.14</td></tr>
+<tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::GetUserOperationDelete()">GetUserOperationDelete()</td><td>3</td><td>100</td><td>100</td></tr>
+<tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::GetUserOperationReplace()">GetUserOperationReplace()</td><td>4</td><td>100</td><td>100</td></tr>
 <tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::.ctor()">.ctor()</td><td>1</td><td>100</td><td>100</td></tr>
 <tr><td title="System.Void LDAP_Library_UnitTest.LdapUserUnitTests::.cctor()">.cctor()</td><td>1</td><td>100</td><td>100</td></tr>
 </tbody>
@@ -62,7 +62,7 @@
 <h1>File(s)</h1>
 <h2 id="cworkLDAPLibraryLDAPLibraryUnitTestLdapUserUnitTestscs">c:\work\LDAP-Library\LDAPLibraryUnitTest\LdapUserUnitTests.cs</h2>
 <table class="lineAnalysis">
-<thead><tr><th></th><th>#</th><th>Line</th><th></th><th>Coverage</th></tr></thead>
+<thead><tr><th></th><th>#</th><th>Line</th><th></th><th>Line coverage</th></tr></thead>
 <tbody>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>1</code></td><td></td><td class="lightgray"><code>using&nbsp;System;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>2</code></td><td></td><td class="lightgray"><code>using&nbsp;System.Collections.Generic;</code></td></tr>
@@ -385,7 +385,7 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>319</code></td><td></td><td class="lightgray"><code></code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>320</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action();</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>321</code></td><td></td><td class="lightgray"><code></code></td></tr>
-<tr title="2 of 4 branches are covered" data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>322</code></td><td class="branch coverage50">&nbsp;</td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.IsTrue(</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>322</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.IsTrue(</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>323</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_testUser.GetUserAttributeKeys().Contains(testAttributeName)&nbsp;&amp;&amp;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '3', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">3</td><td class="rightmargin right"><code>324</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_testUser.GetUserAttribute(testAttributeName).Exists(x&nbsp;=&gt;&nbsp;x.Equals(testAttributeValue))</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>325</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</code></td></tr>
@@ -415,7 +415,7 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>349</code></td><td></td><td class="lightgray"><code></code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>350</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action();</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>351</code></td><td></td><td class="lightgray"><code></code></td></tr>
-<tr title="2 of 4 branches are covered" data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>352</code></td><td class="branch coverage50">&nbsp;</td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.IsTrue(</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>352</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.IsTrue(</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>353</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_testUser.GetUserAttributeKeys().Contains(testAttributeName)&nbsp;&amp;&amp;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '3', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">3</td><td class="rightmargin right"><code>354</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_testUser.GetUserAttribute(testAttributeName).All(x&nbsp;=&gt;&nbsp;!x.Equals(testAttributeValue))</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>355</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</code></td></tr>
@@ -435,7 +435,7 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>369</code></td><td></td><td class="lightgray"><code></code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>370</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action();</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>371</code></td><td></td><td class="lightgray"><code></code></td></tr>
-<tr title="3 of 6 branches are covered" data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>372</code></td><td class="branch coverage50">&nbsp;</td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.IsTrue(</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>372</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert.IsTrue(</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>373</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_testUser.GetUserAttributeKeys().Contains(testAttributeName)&nbsp;&amp;&amp;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '2', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">2</td><td class="rightmargin right"><code>374</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_testUser.GetUserAttribute(testAttributeName).All(x&nbsp;=&gt;&nbsp;x.Equals(testAttributeValue))&nbsp;&amp;&amp;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '1', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">1</td><td class="rightmargin right"><code>375</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_testUser.GetUserAttribute(testAttributeName).Count&nbsp;==&nbsp;1</code></td></tr>
@@ -447,6 +447,6 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><code>381</code></td><td></td><td class="lightgray"><code>}</code></td></tr>
 </tbody>
 </table>
-<div class="footer">Generated by: ReportGenerator 2.0.2.0<br />12/3/2015 - 2.38.26 PM<br /><a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
+<div class="footer">Generated by: ReportGenerator 2.4.3.0<br />2/19/2016 - 11.45.08 AM<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
 <script type="text/javascript" src="combined.js"></script>
 </body></html>

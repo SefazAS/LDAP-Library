@@ -190,7 +190,7 @@ namespace LDAP_Library_UnitTest.localhost
 
             Assert.IsTrue(result);
 
-            List<ILdapUser> returnUsers;
+            IList<ILdapUser> returnUsers;
             const string userAttributeValue = "description Modified";
 
             result = _ldapManagerObj.ModifyUserAttribute(DirectoryAttributeOperation.Delete, testLdapUser, "ciccio",
@@ -357,7 +357,7 @@ namespace LDAP_Library_UnitTest.localhost
                 "description"
             };
 
-            List<ILdapUser> returnUsers;
+            IList<ILdapUser> returnUsers;
 
             var result = _ldapManagerObj.SearchUsers(userAttributeToReturnBySearch, fakeuserIdToSearch, out returnUsers);
 
@@ -376,6 +376,72 @@ namespace LDAP_Library_UnitTest.localhost
             Assert.IsTrue(result);
             Assert.AreEqual(returnUsers.Count, userIdToSearch.Length);
             Assert.AreEqual(returnUsers[0].GetUserCn(), ReadOnlyUserCn);
+        }
+
+        [TestMethod, TestCategory("LDAPLibrary Test Read Permissions")]
+        public void TestSearchNoFieldnameMatch()
+        {
+
+            //////////////////////////////////////////////////////////
+            // ATTENTION, THIS TEST WILL FAIL IF IN THE DEFAULT LOCALHOST LDAP ISN'T PRESENT:
+            // Matteo : objectClass -> person
+            // Alessandro : objectClass -> person
+            //////////////////////////////////////////////////////////
+            TestAdminConnect();
+
+            var userAttributeToReturnBySearch = new List<string>
+            {
+                "description"
+            };
+
+            IList<ILdapUser> returnUsers;
+
+            var result = _ldapManagerObj.SearchUsers(null, out returnUsers);
+
+            Assert.IsTrue(result);
+            Assert.AreEqual(returnUsers.Count, 2);
+            Assert.AreEqual(returnUsers[0].GetUserCn(), ReadOnlyUserCn);
+            Assert.IsTrue(returnUsers[0].GetUserAttributes().Count == 0);
+
+            result = _ldapManagerObj.SearchUsers(userAttributeToReturnBySearch, out returnUsers);
+
+            Assert.IsTrue(result);
+            Assert.AreEqual(returnUsers.Count, 2);
+            Assert.AreEqual(returnUsers[0].GetUserCn(), ReadOnlyUserCn);
+        }
+
+        [TestMethod, TestCategory("LDAPLibrary Test Read Permissions")]
+        public void TestSearchAllNodes()
+        {
+
+            //////////////////////////////////////////////////////////
+            // ATTENTION, THIS TEST WILL FAIL IF IN THE DEFAULT LOCALHOST LDAP ISN'T PRESENT:
+            // Matteo : objectClass -> person
+            // Alessandro : objectClass -> person
+            // Clock : objectClass -> device
+            //////////////////////////////////////////////////////////
+            TestAdminConnect();
+
+            var userAttributeToReturnBySearch = new List<string>
+            {
+                "description"
+            };
+
+            IList<ILdapUser> returnUsers;
+
+            var result = _ldapManagerObj.SearchAllNodes(null, out returnUsers);
+
+            Assert.IsTrue(result);
+            Assert.AreEqual(returnUsers.Count, 4);
+            Assert.AreEqual(returnUsers[1].GetUserCn(), ReadOnlyUserCn);
+            Assert.IsTrue(returnUsers[1].GetUserAttributes().Count == 0);
+
+            result = _ldapManagerObj.SearchUsers(userAttributeToReturnBySearch, out returnUsers);
+
+            Assert.IsTrue(result);
+            Assert.AreEqual(returnUsers.Count, 4);
+            Assert.AreEqual(returnUsers[1].GetUserCn(), ReadOnlyUserCn);
+            Assert.IsTrue(returnUsers[1].GetUserAttributes().Count == 1);
         }
 
         [TestMethod, TestCategory("LDAPLibrary Test Read Permissions")]

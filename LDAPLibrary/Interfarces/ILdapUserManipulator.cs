@@ -5,7 +5,7 @@ using LDAPLibrary.Enums;
 
 namespace LDAPLibrary.Interfarces
 {
-    public interface ILdapUserManipulator : ILdapConnectionObserver, IDisposable
+    public interface ILdapUserManipulator : ILdapConnectionObserver
     {
         /// <summary>
         /// Create a new LDAPUser
@@ -39,13 +39,5 @@ namespace LDAPLibrary.Interfarces
         /// <returns>Success or Failed</returns>
         LdapState ChangeUserPassword(ILdapUser user, string newPwd);
 
-        /// <summary>
-        /// Search Users in the LDAP system
-        /// </summary>
-        /// <param name="otherReturnedAttributes">Addictional attributes added to the results LDAPUsers objects</param>
-        /// <param name="searchedUsers">Credential for the search</param>
-        /// <param name="searchResult">LDAPUsers object returned in the search</param>
-        /// <returns>Boolean that comunicate the result of search</returns>
-        LdapState SearchUsers(List<string> otherReturnedAttributes, string[] searchedUsers,out List<ILdapUser> searchResult);
     }
 }

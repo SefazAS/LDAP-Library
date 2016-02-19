@@ -7,6 +7,8 @@ using LDAPLibrary.Interfarces;
 
 namespace LDAPLibrary.StaticClasses
 {
+    using System.Linq;
+
     internal static class LdapRequestBuilder
     {
         public static AddRequest GetAddRequest(ILdapUser user, string objectClass)
@@ -49,7 +51,7 @@ namespace LDAPLibrary.StaticClasses
             return new ModifyRequest(user.GetUserDn(), modifyUserPassword);
         }
 
-        public static SearchRequest GetSearchUserRequest(string baseDn, string searchFilter,List<string> searchAttributes)
+        public static SearchRequest GetSearchUserRequest(string baseDn, string searchFilter,IEnumerable<string> searchAttributes)
         {
             return new SearchRequest(baseDn, searchFilter, SearchScope.Subtree, searchAttributes.ToArray());
         }
