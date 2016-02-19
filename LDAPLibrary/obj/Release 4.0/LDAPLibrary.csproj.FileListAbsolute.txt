@@ -1,0 +1,5 @@
+C:\work\LDAP-Library\LDAPLibrary\bin\Release\net40\LDAPLibrary.dll
+C:\work\LDAP-Library\LDAPLibrary\bin\Release\net40\LDAPLibrary.pdb
+C:\work\LDAP-Library\LDAPLibrary\obj\Release 4.0\LDAPLibrary.csprojResolveAssemblyReference.cache
+C:\work\LDAP-Library\LDAPLibrary\obj\Release 4.0\LDAPLibrary.dll
+C:\work\LDAP-Library\LDAPLibrary\obj\Release 4.0\LDAPLibrary.pdb

@@ -123,8 +123,8 @@ Inheritance diagram for LDAPLibrary.LdapUserManipulator:</div>
  <div class="center">
   <img src="class_l_d_a_p_library_1_1_ldap_user_manipulator.png" usemap="#LDAPLibrary.LdapUserManipulator_map" alt=""/>
   <map id="LDAPLibrary.LdapUserManipulator_map" name="LDAPLibrary.LdapUserManipulator_map">
-<area href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user_manipulator.html" alt="LDAPLibrary.Interfarces.ILdapUserManipulator" shape="rect" coords="157,56,461,80"/>
-<area href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_connection_observer.html" alt="LDAPLibrary.Interfarces.ILdapConnectionObserver" shape="rect" coords="0,0,304,24"/>
+<area href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user_manipulator.html" alt="LDAPLibrary.Interfarces.ILdapUserManipulator" shape="rect" coords="0,112,304,136"/>
+<area href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_connection_observer.html" alt="LDAPLibrary.Interfarces.ILdapConnectionObserver" shape="rect" coords="0,56,304,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -148,9 +148,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetLdapConnection</b>
 <tr class="memitem:affe5f315a699bbc17f8a97a010281b80"><td class="memItemLeft" align="right" valign="top">LdapState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_user_manipulator.html#affe5f315a699bbc17f8a97a010281b80">ChangeUserPassword</a> (<a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> user, string newPwd)</td></tr>
 <tr class="memdesc:affe5f315a699bbc17f8a97a010281b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change an LDAPUser's Password  <a href="#affe5f315a699bbc17f8a97a010281b80">More...</a><br /></td></tr>
 <tr class="separator:affe5f315a699bbc17f8a97a010281b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab881e29e6737faaeaefbe999e5d7f3d7"><td class="memItemLeft" align="right" valign="top">LdapState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_user_manipulator.html#ab881e29e6737faaeaefbe999e5d7f3d7">SearchUsers</a> (List&lt; string &gt; otherReturnedAttributes, string[] searchedUsers, out List&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt; searchResult)</td></tr>
-<tr class="memdesc:ab881e29e6737faaeaefbe999e5d7f3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search Users in the LDAP system  <a href="#ab881e29e6737faaeaefbe999e5d7f3d7">More...</a><br /></td></tr>
-<tr class="separator:ab881e29e6737faaeaefbe999e5d7f3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a684b2ed96a3f09d019000088fb9978c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a684b2ed96a3f09d019000088fb9978c7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Dispose</b> ()</td></tr>
 <tr class="separator:a684b2ed96a3f09d019000088fb9978c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,51 +299,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Dispose</b> ()</td></
 
 </div>
 </div>
-<a class="anchor" id="ab881e29e6737faaeaefbe999e5d7f3d7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">LdapState LDAPLibrary.LdapUserManipulator.SearchUsers </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>otherReturnedAttributes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string[]&#160;</td>
-          <td class="paramname"><em>searchedUsers</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">out List&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt;&#160;</td>
-          <td class="paramname"><em>searchResult</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Search Users in the LDAP system </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">otherReturnedAttributes</td><td>Addictional attributes added to the results LDAPUsers objects</td></tr>
-    <tr><td class="paramname">searchedUsers</td><td>Credential for the search</td></tr>
-    <tr><td class="paramname">searchResult</td><td>LDAPUsers object returned in the search</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Boolean that comunicate the result of search</dd></dl>
-
-<p>Implements <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user_manipulator.html#a9384f3c3e3a8820ed423a8a828187f2c">LDAPLibrary.Interfarces.ILdapUserManipulator</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>LDAPLibrary/LDAPUserManipulator.cs</li>
 </ul>
@@ -356,7 +308,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Dispose</b> ()</td></
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_l_d_a_p_library.html">LDAPLibrary</a></li><li class="navelem"><a class="el" href="class_l_d_a_p_library_1_1_ldap_user_manipulator.html">LdapUserManipulator</a></li>
-    <li class="footer">Generated on Thu Dec 3 2015 14:53:29 for LDAPLibrary by
+    <li class="footer">Generated on Fri Feb 19 2016 11:52:33 for LDAPLibrary by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

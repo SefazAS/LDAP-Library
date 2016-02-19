@@ -14,18 +14,20 @@ var hierarchy =
       [ "GUI_LDAPUnitTest.Forms.TestUserForm", "class_g_u_i___l_d_a_p_unit_test_1_1_forms_1_1_test_user_form.html", null ]
     ] ],
     [ "IDisposable", null, [
+      [ "LDAPLibrary.Interfarces.ILdapConnectionObserver", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_connection_observer.html", [
+        [ "LDAPLibrary.ILdapSearcher", "interface_l_d_a_p_library_1_1_i_ldap_searcher.html", [
+          [ "LDAPLibrary.LdapSearcher", "class_l_d_a_p_library_1_1_ldap_searcher.html", null ]
+        ] ],
+        [ "LDAPLibrary.Interfarces.ILdapUserManipulator", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user_manipulator.html", [
+          [ "LDAPLibrary.LdapUserManipulator", "class_l_d_a_p_library_1_1_ldap_user_manipulator.html", null ]
+        ] ]
+      ] ],
       [ "LDAPLibrary.Interfarces.ILdapManager", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_manager.html", [
         [ "LDAPLibrary.LdapManager", "class_l_d_a_p_library_1_1_ldap_manager.html", null ]
-      ] ],
-      [ "LDAPLibrary.Interfarces.ILdapUserManipulator", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user_manipulator.html", [
-        [ "LDAPLibrary.LdapUserManipulator", "class_l_d_a_p_library_1_1_ldap_user_manipulator.html", null ]
       ] ]
     ] ],
     [ "LDAPLibrary.Interfarces.ILdapConfigRepository", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_config_repository.html", [
       [ "LDAPLibrary.LdapConfigRepository", "class_l_d_a_p_library_1_1_ldap_config_repository.html", null ]
-    ] ],
-    [ "LDAPLibrary.Interfarces.ILdapConnectionObserver", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_connection_observer.html", [
-      [ "LDAPLibrary.Interfarces.ILdapUserManipulator", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user_manipulator.html", null ]
     ] ],
     [ "LDAPLibrary.Interfarces.ILdapUser", "interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html", [
       [ "LDAPLibrary.FakeLdapUser", "class_l_d_a_p_library_1_1_fake_ldap_user.html", null ],
@@ -35,10 +37,10 @@ var hierarchy =
     [ "GUI_LDAPUnitTest.Tests.GUIStructures.OneItemConfiguration.IOneItemConfiguration", "interface_g_u_i___l_d_a_p_unit_test_1_1_tests_1_1_g_u_i_structures_1_1_one_item_configuration_1_1_i_one_item_configuration.html", null ],
     [ "LDAP_Library_UnitTest.LdapConfigRepositoryFactoryUnitTests", "class_l_d_a_p___library___unit_test_1_1_ldap_config_repository_factory_unit_tests.html", null ],
     [ "LDAP_Library_UnitTest.LdapConfigRepositoryUnitTests", "class_l_d_a_p___library___unit_test_1_1_ldap_config_repository_unit_tests.html", null ],
-    [ "LDAPLibrary.Factories.LdapConnectionFactory", "class_l_d_a_p_library_1_1_factories_1_1_ldap_connection_factory.html", null ],
     [ "LDAP_Library_UnitTest.LdapConnectionFactoryUnitTests", "class_l_d_a_p___library___unit_test_1_1_ldap_connection_factory_unit_tests.html", null ],
     [ "LDAP_Library_UnitTest.LDAPLibraryUnitTest", "class_l_d_a_p___library___unit_test_1_1_l_d_a_p_library_unit_test.html", null ],
     [ "LDAP_Library_UnitTest.LdapModeCheckerUnitTests", "class_l_d_a_p___library___unit_test_1_1_ldap_mode_checker_unit_tests.html", null ],
+    [ "LDAP_Library_UnitTest.Factories.LdapSearcherFactoryUnitTest", "class_l_d_a_p___library___unit_test_1_1_factories_1_1_ldap_searcher_factory_unit_test.html", null ],
     [ "LDAP_Library_UnitTest.LdapStateUtilsUnitTests", "class_l_d_a_p___library___unit_test_1_1_ldap_state_utils_unit_tests.html", null ],
     [ "LDAP_Library_UnitTest.LdapUserManipulatorFactoryUnitTests", "class_l_d_a_p___library___unit_test_1_1_ldap_user_manipulator_factory_unit_tests.html", null ],
     [ "LDAP_Library_UnitTest.LdapUserUnitTests", "class_l_d_a_p___library___unit_test_1_1_ldap_user_unit_tests.html", null ],

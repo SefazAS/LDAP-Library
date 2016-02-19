@@ -147,9 +147,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a88a4692054d4fe768dc5f08022f8b640"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_manager.html#a88a4692054d4fe768dc5f08022f8b640">ChangeUserPassword</a> (<a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> user, string newPwd)</td></tr>
 <tr class="memdesc:a88a4692054d4fe768dc5f08022f8b640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the user Password  <a href="#a88a4692054d4fe768dc5f08022f8b640">More...</a><br /></td></tr>
 <tr class="separator:a88a4692054d4fe768dc5f08022f8b640"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c6e78e2aa498d84a551d5d9f2321b8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_manager.html#a9c6e78e2aa498d84a551d5d9f2321b8d">SearchUsers</a> (List&lt; string &gt; otherReturnedAttributes, string[] searchedUsers, out List&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt; searchResult)</td></tr>
-<tr class="memdesc:a9c6e78e2aa498d84a551d5d9f2321b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search Users in the LDAP system  <a href="#a9c6e78e2aa498d84a551d5d9f2321b8d">More...</a><br /></td></tr>
-<tr class="separator:a9c6e78e2aa498d84a551d5d9f2321b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1adce32500adc9cac6e5372478abfd0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_manager.html#a1adce32500adc9cac6e5372478abfd0f">SearchUsers</a> (IList&lt; string &gt; otherReturnedAttributes, string[] searchedUsers, out IList&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt; searchResult)</td></tr>
+<tr class="memdesc:a1adce32500adc9cac6e5372478abfd0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search Users in the LDAP system  <a href="#a1adce32500adc9cac6e5372478abfd0f">More...</a><br /></td></tr>
+<tr class="separator:a1adce32500adc9cac6e5372478abfd0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0a400e7a780d666764260500767734"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_manager.html#a1f0a400e7a780d666764260500767734">SearchUsers</a> (IList&lt; string &gt; otherReturnedAttributes, out IList&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt; searchResult)</td></tr>
+<tr class="memdesc:a1f0a400e7a780d666764260500767734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search all the users in the base tree. Does not apply the match fieldname to search  <a href="#a1f0a400e7a780d666764260500767734">More...</a><br /></td></tr>
+<tr class="separator:a1f0a400e7a780d666764260500767734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1830c262fb9abcab8e4beb3d4f2b9661"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_manager.html#a1830c262fb9abcab8e4beb3d4f2b9661">SearchAllNodes</a> (IList&lt; string &gt; otherReturnedAttributes, out IList&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt; searchResult)</td></tr>
+<tr class="memdesc:a1830c262fb9abcab8e4beb3d4f2b9661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for every node in the LDAP Tree  <a href="#a1830c262fb9abcab8e4beb3d4f2b9661">More...</a><br /></td></tr>
+<tr class="separator:a1830c262fb9abcab8e4beb3d4f2b9661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2318217abb55a567726f743eb448095"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_d_a_p_library_1_1_ldap_manager.html#ac2318217abb55a567726f743eb448095">GetLdapMessage</a> ()</td></tr>
 <tr class="memdesc:ac2318217abb55a567726f743eb448095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Error Message of an occurred LDAP Exception  <a href="#ac2318217abb55a567726f743eb448095">More...</a><br /></td></tr>
 <tr class="separator:ac2318217abb55a567726f743eb448095"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -535,6 +541,44 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connect</b> (NetworkC
 
 </div>
 </div>
+<a class="anchor" id="a1830c262fb9abcab8e4beb3d4f2b9661"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LDAPLibrary.LdapManager.SearchAllNodes </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>otherReturnedAttributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out IList&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt;&#160;</td>
+          <td class="paramname"><em>searchResult</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search for every node in the LDAP Tree </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">otherReturnedAttributes</td><td>Attribute To return in the search</td></tr>
+    <tr><td class="paramname">searchResult</td><td>Result of the search</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Boolean that comunicate the result of search</dd></dl>
+
+<p>Implements <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_manager.html#a961bb7d932779fb7bfaf2056389086a5">LDAPLibrary.Interfarces.ILdapManager</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="abfe1735d912d42f81cc989e030eaf6e4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -573,14 +617,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connect</b> (NetworkC
 
 </div>
 </div>
-<a class="anchor" id="a9c6e78e2aa498d84a551d5d9f2321b8d"></a>
+<a class="anchor" id="a1adce32500adc9cac6e5372478abfd0f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool LDAPLibrary.LdapManager.SearchUsers </td>
           <td>(</td>
-          <td class="paramtype">List&lt; string &gt;&#160;</td>
+          <td class="paramtype">IList&lt; string &gt;&#160;</td>
           <td class="paramname"><em>otherReturnedAttributes</em>, </td>
         </tr>
         <tr>
@@ -592,7 +636,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connect</b> (NetworkC
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">out List&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt;&#160;</td>
+          <td class="paramtype">out IList&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt;&#160;</td>
           <td class="paramname"><em>searchResult</em>&#160;</td>
         </tr>
         <tr>
@@ -614,7 +658,45 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connect</b> (NetworkC
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean that comunicate the result of search</dd></dl>
 
-<p>Implements <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_manager.html#a11d2b2e2b4eaa12bce5cb448a921ca4c">LDAPLibrary.Interfarces.ILdapManager</a>.</p>
+<p>Implements <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_manager.html#a21cfb5d4d93a7f6af5d5d38452db2069">LDAPLibrary.Interfarces.ILdapManager</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f0a400e7a780d666764260500767734"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LDAPLibrary.LdapManager.SearchUsers </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>otherReturnedAttributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out IList&lt; <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_user.html">ILdapUser</a> &gt;&#160;</td>
+          <td class="paramname"><em>searchResult</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search all the users in the base tree. Does not apply the match fieldname to search </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">otherReturnedAttributes</td><td>Attribute To return in the search</td></tr>
+    <tr><td class="paramname">searchResult</td><td>Result of the search</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Boolean that comunicate the result of search</dd></dl>
+
+<p>Implements <a class="el" href="interface_l_d_a_p_library_1_1_interfarces_1_1_i_ldap_manager.html#a3ecac96cd168e19b50ee3eb1cf0432a8">LDAPLibrary.Interfarces.ILdapManager</a>.</p>
 
 </div>
 </div>
@@ -627,7 +709,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connect</b> (NetworkC
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_l_d_a_p_library.html">LDAPLibrary</a></li><li class="navelem"><a class="el" href="class_l_d_a_p_library_1_1_ldap_manager.html">LdapManager</a></li>
-    <li class="footer">Generated on Thu Dec 3 2015 14:53:29 for LDAPLibrary by
+    <li class="footer">Generated on Fri Feb 19 2016 11:52:33 for LDAPLibrary by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
