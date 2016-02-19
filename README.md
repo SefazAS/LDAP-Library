@@ -186,7 +186,7 @@ bool result = _ldapManagerObj.SearchUserAndConnect(ReadOnlyUserCn, ReadOnlyUserP
 Assert.IsTrue(result);
 ```
 
-Search Users 
+Search Users
 -------------
 
 In this snippet there's showed how to search a set of users and also how to specify a particular set of returning attributes of the users result.
@@ -228,6 +228,80 @@ Assert.AreEqual(returnUsers[0].GetUserCn(), ReadOnlyUserCn);
 ```
 
 
+SearchUsers
+-------------
+
+This is another version of the previous method but in this case this not check the *LDAPMatchFieldUsername* with the input but return all the entities that only matches the *LdapUserObjectClass* attribute
+
+```cs
+
+//////////////////////////////////////////////////////////
+// ATTENTION, THIS TEST WILL FAIL IF IN THE DEFAULT LOCALHOST LDAP ISN'T PRESENT:
+// Matteo : objectClass -> person
+// Alessandro : objectClass -> person
+//////////////////////////////////////////////////////////
+TestAdminConnect();
+
+var userAttributeToReturnBySearch = new List<string>
+{
+"description"
+};
+
+IList<ILdapUser> returnUsers;
+
+var result = _ldapManagerObj.SearchUsers(null, out returnUsers);
+
+Assert.IsTrue(result);
+Assert.AreEqual(returnUsers.Count, 2);
+Assert.AreEqual(returnUsers[0].GetUserCn(), ReadOnlyUserCn);
+Assert.IsTrue(returnUsers[0].GetUserAttributes().Count == 0);
+
+result = _ldapManagerObj.SearchUsers(userAttributeToReturnBySearch, out returnUsers);
+
+Assert.IsTrue(result);
+Assert.AreEqual(returnUsers.Count, 2);
+Assert.AreEqual(returnUsers[0].GetUserCn(), ReadOnlyUserCn);
+
+```
+
+SearchAllNodes
+--------------
+
+This method return all the nodes starting from the *LdapSearchBaseDn*. This search does not apply filters, even on the objectClass.
+Note: the first returned entities is the LdapSearchBaseDn itself.
+
+```cs
+
+//////////////////////////////////////////////////////////
+// ATTENTION, THIS TEST WILL FAIL IF IN THE DEFAULT LOCALHOST LDAP ISN'T PRESENT:
+// Matteo : objectClass -> person
+// Alessandro : objectClass -> person
+// Clock : objectClass -> device
+//////////////////////////////////////////////////////////
+TestAdminConnect();
+
+var userAttributeToReturnBySearch = new List<string>
+{
+"description"
+};
+
+IList<ILdapUser> returnUsers;
+
+var result = _ldapManagerObj.SearchAllNodes(null, out returnUsers);
+
+Assert.IsTrue(result);
+Assert.AreEqual(returnUsers.Count, 4);
+Assert.AreEqual(returnUsers[1].GetUserCn(), ReadOnlyUserCn);
+Assert.IsTrue(returnUsers[1].GetUserAttributes().Count == 0);
+
+result = _ldapManagerObj.SearchUsers(userAttributeToReturnBySearch, out returnUsers);
+
+Assert.IsTrue(result);
+Assert.AreEqual(returnUsers.Count, 4);
+Assert.AreEqual(returnUsers[1].GetUserCn(), ReadOnlyUserCn);
+Assert.IsTrue(returnUsers[1].GetUserAttributes().Count == 1);
+
+```
 
 CUD OPERATIONS (require the administrator user and write permissions )
 =============
